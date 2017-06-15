@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   devise_for :users
-
+  get "/faq" => "pages#faq"
   resources :events
 
   namespace :admin do
