@@ -1,5 +1,4 @@
 class Event < ApplicationRecord
-
  validates_presence_of :name, :friendly_id
 
  validates_uniqueness_of :friendly_id
@@ -10,6 +9,11 @@ class Event < ApplicationRecord
   def to_param
     self.friendly_id
   end
+
+  STATUS = ["草稿", "公开", "私密"]
+  validates_inclusion_of :status, :in => STATUS
+
+  belongs_to :category, :optional => true
 
   protected
 

@@ -60,7 +60,9 @@ end
 
 gem "rails-i18n"
 gem "devise-i18n"
-
+gem 'simple_form'
+gem "select2-rails"
+gem 'awesome_rails_console'
 
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
