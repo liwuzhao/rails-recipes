@@ -63,6 +63,7 @@ gem "devise-i18n"
 gem 'simple_form'
 gem "select2-rails"
 gem 'awesome_rails_console'
+gem "nested_form_fields"
 
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
