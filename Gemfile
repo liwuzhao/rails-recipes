@@ -64,7 +64,7 @@ gem 'simple_form'
 gem "select2-rails"
 gem 'awesome_rails_console'
 gem "nested_form_fields"
-
+gem 'bootstrap-datepicker-rails'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
