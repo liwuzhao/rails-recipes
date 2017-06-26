@@ -8,4 +8,5 @@ class EventsController < ApplicationController
     @event = Event.find_by_friendly_id!(params[:id])
   end
 
+
 end
