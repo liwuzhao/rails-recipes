@@ -66,6 +66,8 @@ gem 'awesome_rails_console'
 gem "nested_form_fields"
 gem 'bootstrap-datepicker-rails'
 gem 'ckeditor'
+gem 'ranked-model'
+gem 'jquery-ui-rails'
 
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
