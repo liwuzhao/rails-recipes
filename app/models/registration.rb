@@ -6,7 +6,7 @@ class Registration < ApplicationRecord
   validates_inclusion_of :status, :in => STATUS
   validates_presence_of :status, :ticket_id
 
-  attr_accessor :current_step
+  attr_accessor :current_step #虚拟属性，数据库中没有这个字段
   validates_presence_of :name, :email, :cellphone, :if => :should_validate_basic_data?
   validates_presence_of :name, :email, :cellphone, :bio, :if => :should_validate_all_data?
 
