@@ -8,11 +8,14 @@ class User < ApplicationRecord
     self.email.split("@").first
   end
 
+  #
   has_many :memberships
   has_many :groups, :through => :memberships
 
+  #用户资料 合并表单
   has_one :profile
-
   accepts_nested_attributes_for :profile
+
+  has_many :registrations
 
 end
