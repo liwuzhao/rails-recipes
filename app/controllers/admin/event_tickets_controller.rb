@@ -27,7 +27,7 @@ class Admin::EventTicketsController < AdminController
     @ticket = @event.tickets.find(params[:id])
 
     if @ticket.update(ticket_params)
-      redirect_to admin_events_tickets_path(@event)
+      redirect_to admin_event_tickets_path(@event)
     else
       render "edit"
     end

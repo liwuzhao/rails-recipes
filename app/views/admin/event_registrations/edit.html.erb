@@ -1,0 +1,40 @@
+<h1>Edit Registration</h1>
+
+<%= form_for [:admin, @event, @registration] do |f| %>
+
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, :class => "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :ticket_id %>
+    <%= f.select :ticket_id, @event.tickets.map{ |t| [t.name, t.id] }, {}, :class => "form-control", :required => true, :autofocus => true%>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :email, "E-mail", :class => "control-label" %>
+    <%= f.email_field :email, :class => "form-control", :required => true  %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :cellphone %>
+    <%= f.text_field :cellphone, :class => "form-control", :required => true  %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :website %>
+    <%= f.url_field :website, :class => "form-control", :required => true, :autofocus => true  %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :bio %>
+    <%= f.text_area :bio, :class => "form-control", :required => true  %>
+  </div>
+
+  <div class="form-group">
+    <%= f.submit "Update", :class => "btn btn-primary" %>
+    <%= link_to "Cancel", admin_event_tickets_path(@event) %>
+  </div>
+
+<% end %>

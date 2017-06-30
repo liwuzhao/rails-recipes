@@ -14,7 +14,7 @@ class Event < ApplicationRecord
 
   #status 状态
   STATUS = ["草稿", "公开", "私密"]
-  validates_inclusion_of :status, :in => STATUS
+  # validates_inclusion_of :status, :in => STATUS
 
   #分类
   belongs_to :category, :optional => true
