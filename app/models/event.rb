@@ -30,6 +30,11 @@ class Event < ApplicationRecord
   #
   has_many :registrations
 
+  #
+  scope :only_public, -> { where( :status => "public" ) }
+  scope :only_available, -> { where( :status => ["public", "private"] ) }
+
+
   protected
 
   #生成乱序的网址id
