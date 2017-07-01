@@ -4,6 +4,12 @@
   <%= link_to image_tag(@event.logo.url(:thumb)), @event.logo.url, :target => "_blank" %>
 <% end %>
 
+<% if @event.images.present? %>
+  <% @event.images.each do |i| %>
+    <%= link_to image_tag(i.url(:small)), i.url %>
+  <% end %>
+<% end %>
+
 <p>
   <%= link_to "打開前台", event_path(@event), :target => "_blank", :class => "btn btn-primary" %>
 </p>
