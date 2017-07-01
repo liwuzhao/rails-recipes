@@ -1,11 +1,11 @@
 class Admin::EventsController < AdminController
 
   def index
-    @events = Event.only_public.rank(:row_order).all
+    @events = Event.rank(:row_order).all
   end
 
   def show
-    @event = Event.only_available.find_by_friendly_id!(params[:id])
+    @event = Event.find_by_friendly_id!(params[:id])
   end
 
   def new
@@ -81,7 +81,7 @@ class Admin::EventsController < AdminController
   protected
 
   def event_params
-    params.require(:event).permit(:name, :description, :friendly_id, :status, :category_id, :tickets_attributes => [:id, :name, :description, :price, :_destroy])
+    params.require(:event).permit(:name, :description, :logo, :remove_logo, :friendly_id, :status, :category_id, :tickets_attributes => [:id, :name, :description, :price, :_destroy])
   end
 
 end

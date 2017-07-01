@@ -70,6 +70,8 @@ gem 'ranked-model'
 gem 'jquery-ui-rails'
 gem 'kaminari'
 gem 'ransack'
+gem 'carrierwave'
+gem "mini_magick"
 
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

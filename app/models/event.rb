@@ -1,4 +1,6 @@
 class Event < ApplicationRecord
+  #uploader
+  mount_uploader :logo, EventLogoUploader
 
   #friendly_id 网址id
   validates_presence_of :name, :friendly_id
