@@ -1,14 +1,21 @@
 <h1><%= @event.name %></h1>
 
+<ul>
+<% @event.attachments.each do |a| %>
+  <li><%= link_to a.description, a.attachment.url %></li>
+  <li><%= link_to image_tag(a.attachment.url(:small)), a.attachment.url %></li>
+<% end %>
+</ul>
+
 <% if @event.logo.present? %>
   <%= link_to image_tag(@event.logo.url(:thumb)), @event.logo.url, :target => "_blank" %>
 <% end %>
 
-<% if @event.images.present? %>
+<!-- <% if @event.images.present? %>
   <% @event.images.each do |i| %>
     <%= link_to image_tag(i.url(:small)), i.url %>
   <% end %>
-<% end %>
+<% end %> -->
 
 <h2><%= @event.status %></h2>
 <h2><%= display_event_status(@event) %></h2>
