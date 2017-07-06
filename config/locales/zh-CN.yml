@@ -1,7 +1,7 @@
 "zh-CN":
   bulk_update: 批次编辑
   bulk_delete: 批次删除
-  
+
   activerecord:
     attributes:
       event:
@@ -16,5 +16,5 @@
 
   registration:
     status:
-    pending: 报名尚未完成
-    confirmed: 报名成功
+      pending: 报名尚未完成
+      confirmed: 报名成功
