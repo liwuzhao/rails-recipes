@@ -1,27 +1,29 @@
 class Admin::UsersController < AdminController
-   def index
-     @users = User.all
-     @users = User.includes(:groups).all
-   end
+  before_action :require_admin!
 
-   def edit
-     @user = User.find(params[:id])
-   end
+  def index
+    @users = User.all
+    @users = User.includes(:groups).all
+  end
 
-   def update
-     @user = User.find(params[:id])
+  def edit
+    @user = User.find(params[:id])
+  end
 
-     if @user.update(user_params)
-       redirect_to admin_users_path
-     else
-       render "edit"
-     end
-   end
+  def update
+    @user = User.find(params[:id])
 
-   protected
+    if @user.update(user_params)
+      redirect_to admin_users_path
+    else
+      render "edit"
+    end
+  end
 
-   def user_params
-     params.require(:user).permit(:email, :group_ids => [])
-   end
+  protected
+
+  def user_params
+    params.require(:user).permit(:email, :role, :group_ids => [])
+  end
 
 end
