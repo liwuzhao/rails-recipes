@@ -55,7 +55,7 @@
 <% @registrations.each do |registration| %>
   <tr>
     <td><%= registration.id %></td>
-    <td><%= registration.ticket.name %></td>
+    <td><%= registration.ticket.try(:name) %></td>
     <td><%= registration.name %></td>
     <td><%= t( registration.status, :scope => "registration.status") %></td>
     <td><%= registration.email %></td>
@@ -70,3 +70,6 @@
 <div class="text-center">
   <%= paginate @registrations %>
 </div>
+<p>
+  <%= link_to "汇出 CSV", admin_event_registrations_path(:format => :csv), :class => "btn btn-default" %>
+</p>
