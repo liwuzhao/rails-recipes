@@ -73,6 +73,9 @@ gem 'ransack'
 gem 'carrierwave'
 gem "mini_magick"
 gem 'paper_trail'
+gem 'rubyzip'
+gem 'axlsx'
+gem 'axlsx_rails'
 
 
 
