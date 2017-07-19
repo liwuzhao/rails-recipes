@@ -19,6 +19,10 @@ Rails.application.routes.draw do
   namespace :admin do
     root "events#index"
 
+    resources :versions do
+        post :undo
+    end
+    
     resources :events do
       collection do
         post :bulk_update
@@ -29,7 +33,7 @@ Rails.application.routes.draw do
       resources :tickets, :controller => "event_tickets"
       resources :registrations, :controller => "event_registrations"
     end
-    
+
     resources :users do
       resource :profile, :controller => "user_profiles"
     end

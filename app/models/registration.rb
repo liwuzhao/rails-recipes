@@ -1,5 +1,6 @@
 class Registration < ApplicationRecord
-
+  has_paper_trail
+  
   validate :check_event_status, :on => :create
 
   STATUS = ["pending", "confirmed"]

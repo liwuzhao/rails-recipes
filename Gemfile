@@ -72,6 +72,8 @@ gem 'kaminari'
 gem 'ransack'
 gem 'carrierwave'
 gem "mini_magick"
+gem 'paper_trail'
+
 
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
