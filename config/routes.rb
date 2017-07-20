@@ -22,7 +22,7 @@ Rails.application.routes.draw do
     resources :versions do
         post :undo
     end
-    
+
     resources :events do
       collection do
         post :bulk_update
@@ -31,7 +31,12 @@ Rails.application.routes.draw do
         post :reorder
       end
       resources :tickets, :controller => "event_tickets"
-      resources :registrations, :controller => "event_registrations"
+      resources :registrations, :controller => "event_registrations" do
+        collection do
+          post :import
+        end
+      end
+      resources :registration_imports
     end
 
     resources :users do

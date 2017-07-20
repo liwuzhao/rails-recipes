@@ -36,11 +36,11 @@ class Event < ApplicationRecord
 
   #
   has_many :registrations
+  has_many :registration_imports, :dependent => :destroy
 
   #
   scope :only_public, -> { where( :status => "public" ) }
   scope :only_available, -> { where( :status => ["public", "private"] ) }
-
 
   protected
 
