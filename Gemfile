@@ -77,6 +77,7 @@ gem 'rubyzip'
 gem 'axlsx'
 gem 'axlsx_rails'
 gem 'premailer-rails'
+gem 'sidekiq'
 
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

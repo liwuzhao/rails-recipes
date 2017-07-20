@@ -1,9 +1,9 @@
 class Registration < ApplicationRecord
   has_paper_trail
-  
+
   validate :check_event_status, :on => :create
 
-  STATUS = ["pending", "confirmed"]
+  STATUS = ["pending", "confirmed", "cancalled"]
   validates_inclusion_of :status, :in => STATUS
   validates_presence_of :status, :ticket_id
 
